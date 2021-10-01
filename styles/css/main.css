@@ -1,0 +1,54 @@
+@keyframes magnet {
+  to {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #202124;
+}
+
+.text {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+.text.title {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.text.subtitle {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: #DADFEA;
+}
+
+.text.bold {
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1000px) {
+  .desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .mobile {
+    display: none;
+  }
+}
