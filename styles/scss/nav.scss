@@ -1,0 +1,11 @@
+#navbar {
+	width: 100vw;
+	height: 5vh;
+	background-color: $pink;
+}
+
+@media screen and (max-width: $media-breakpoint) {
+	#navbar {
+		display: none;
+	}
+}

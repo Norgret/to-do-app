@@ -1,0 +1,33 @@
+#app-container {
+	@include flex-row;
+	height: 100vh;
+}
+
+#lists-display {
+	overflow-y: scroll;
+	width: 20vw;
+	height: 100%;
+	background-color: $darkgray;
+	.list {
+
+	}.active {
+		color: $pink;
+	}
+
+	.bottom-padding {
+		min-height: 100px;
+	}
+	.toolbar {
+		position: absolute;
+		bottom: 0;
+		width: 20vw;
+		height: 50px;
+		background-color: $black;
+	}
+}
+
+#list-items-display {
+	overflow-y: scroll;
+	width: 80vw;
+	background-color: $mediumgray;
+}

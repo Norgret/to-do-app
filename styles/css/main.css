@@ -12,10 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100vw;
-  min-height: 100vh;
-  background-color: #202124;
+  background-color: #0B0C10;
 }
 
 .text {
@@ -24,7 +22,7 @@ body {
   font-size: 1em;
   font-weight: 300;
   line-height: 140%;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .text.title {
@@ -42,6 +40,18 @@ body {
   font-weight: 900;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (max-width: 1000px) {
   .desktop {
     display: none;
@@ -51,4 +61,46 @@ body {
   .mobile {
     display: none;
   }
+}
+#navbar {
+  width: 100vw;
+  height: 5vh;
+  background-color: #FB77B7;
+}
+
+@media screen and (max-width: 1000px) {
+  #navbar {
+    display: none;
+  }
+}
+#app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+#lists-display {
+  overflow-y: scroll;
+  width: 20vw;
+  height: 100%;
+  background-color: #0B0C10;
+}
+#lists-display .active {
+  color: #FB77B7;
+}
+#lists-display .bottom-padding {
+  min-height: 100px;
+}
+#lists-display .toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 20vw;
+  height: 50px;
+  background-color: #000000;
+}
+
+#list-items-display {
+  overflow-y: scroll;
+  width: 80vw;
+  background-color: #1A1B1F;
 }

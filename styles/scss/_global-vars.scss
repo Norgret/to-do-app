@@ -1,0 +1,41 @@
+// colors
+$lightgray: #DADFEA;
+$gray: #56585B;
+$mediumgray: #1A1B1F;
+$darkgray: #0B0C10;
+$black: #000000;
+$white: #FFFFFF;
+$pink: #FB77B7;
+$orange: #FF7B54;
+$shadow: rgba(0, 0, 0, 0.3);
+
+// misc.
+$side-margin: 7vw;
+$media-breakpoint: 1000px;
+
+//
+// mixins & templates
+//
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+}
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+
+//
+// animations
+//
+@keyframes magnet {
+	from {}
+	to {
+		box-shadow: 3px 3px 3px $shadow;
+	}
+}
+@mixin magnetic-effect {
+	animation-duration: 0.2s;
+	animation-name: magnet;
+}
