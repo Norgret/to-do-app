@@ -12,10 +12,18 @@ body {
 	@include flex-column;
 	align-items: center;
 	width: 100vw;
-	background-color: $darkgray
+	background-color: $darkgray;
+}
+.icon {
+	width: $icon-size;
+	height: $icon-size;
+	font-size: $icon-size;
+	color: $white;
 }
 
 .text {
+	margin-left: 10px;
+	margin-right: 10px;
 	font-family: sans-serif;
 	text-decoration: none;
 	font-size: 1.0em;
@@ -41,9 +49,22 @@ body {
 .text.link.tool:hover {}
 
 
+.btn {
+	background: transparent;
+	border: none;
+}
+.icon {
+	margin: 10px;
+}
+
 .row {
 	@include flex-row;
 	justify-content: space-between;
+}
+.row-center {
+	@include flex-row;
+	justify-content: space-between;
+	align-items: center;
 }
 .col {
 	@include flex-column;

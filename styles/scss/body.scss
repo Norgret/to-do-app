@@ -1,33 +1,144 @@
+$lists-display-width: 33vw;
+$list-items-width: 67vw;
+$toolbar-height: 70px;
+
+
 #app-container {
 	@include flex-row;
 	height: 100vh;
 }
 
+
+.toolbar-container {
+
+	position: absolute;
+	bottom: 0;
+
+	.toolbar {
+		@include flex-row;
+		justify-content: space-between;
+		width: $lists-display-width;
+		height: $toolbar-height;
+		background-color: $darkgray2;
+
+		.btn {
+			background-color: $darkgray2;
+			.icon {
+				padding: 10px;
+			}
+		}
+		.btn:active {
+			@include magnetic-effect;
+			box-shadow: $shadow-heavy;
+		}
+		.btn.plus .icon {
+			color: $pink;
+		}
+		.btn.plus:active {
+			background-color: $darkpink;
+		}
+		.btn.minus .icon {
+			color: $orange;
+		}
+		.btn.minus:active {
+			background-color: $darkorange;
+		}
+		.btn.up .icon, .btn.down .icon {
+			color: $lightgray;
+		}
+		.btn.up:active, .btn.down:active {
+			background-color: $gray;
+		}
+	}
+
+}
+
+
 #lists-display {
+
 	overflow-y: scroll;
-	width: 20vw;
+	overflow-x: hidden;
+	width: $lists-display-width;
 	height: 100%;
 	background-color: $darkgray;
-	.list {
 
+
+	.list {
+		@include flex-row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 16px;
+		.btn.edit {
+			margin-right: 15px;
+		}
+		.text {
+			overflow-x: scroll;
+			word-wrap: none;
+			width: 60%;
+		}
 	}.active {
 		color: $pink;
+	}
+	.list:nth-child(even) {
+		background-color: $darkgray2;
+		.btn.edit {
+			background-color: $black;
+		}
+	}
+	.list:nth-child(odd) {
+		background-color: $black;
+		.btn.edit {
+			background-color: $darkgray2;
+		}
 	}
 
 	.bottom-padding {
 		min-height: 100px;
 	}
-	.toolbar {
-		position: absolute;
-		bottom: 0;
-		width: 20vw;
-		height: 50px;
-		background-color: $black;
-	}
+
 }
 
+
+
+
 #list-items-display {
+
+	z-index: 1;
+	@include flex-column;
 	overflow-y: scroll;
-	width: 80vw;
-	background-color: $mediumgray;
+	width: $list-items-width;
+	background-color: $darkgray3;
+	box-shadow: $shadow-light;
+
+
+	.list-item {
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 4px solid $darkgray;
+
+		.btn.checkbox {
+			width: 28px;
+			height: 28px;
+			margin-left: 24px;
+			margin-right: 24px;
+			border: 4px solid $black;
+			border-radius: 8px;
+			background: transparent;
+
+			.fa-check {
+				color: $pink;
+			}
+		}
+
+		.tools-container {
+			.btn.trash {
+				width: 28px;
+				height: 28px;
+				color: $orange;
+			}
+		}
+	}
+
 }

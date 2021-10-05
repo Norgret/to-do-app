@@ -2,12 +2,15 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link type='text/css' rel='stylesheet' href="../styles/css/main.css"/>
 
 	<title></title>
 </head>
 
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<div id='app-container'>
 
 
@@ -15,27 +18,86 @@
 
 
 		<div class='col left' id='lists-display'>
-			<div class='list title text row'>List 1</div>
-			<div class='list title text row'>List 2</div>
-			<div class='list title text row active'>List 3</div>
-			<div class='list title text row'>List 4</div>
 
-			<div class='bottom-padding text'></div>
-			<div class='toolbar'>
-				<div class='new-list'>
-					<button class='btn plus'></button>
+			<div class='list'>
+				<p class='title text'>List 1</p>
+				<button class='btn edit'>
+					<i class='fas fa-pen icon'></i>
+				</button>
+			</div>
+			<div class='list'>
+				<p class='title text'>List 2</p>
+				<button class='btn edit'>
+					<i class='fas fa-pen icon'></i>
+				</button>
+			</div>
+			<div class='list active'>
+				<p class='title text active'>List 3</p>
+				<button class='btn edit'>
+					<i class='fas fa-pen icon'></i>
+				</button>
+			</div>
+			<div class='list'>
+				<p class='title text'>List 4</p>
+				<button class='btn edit'>
+					<i class='fas fa-pen icon'></i>
+				</button>
+			</div>
+
+
+
+			<div class='bottom-padding'></div>
+			<div class='toolbar-container'>
+				<div class='toolbar' id='toolbar-left'>
+					<div class='left'>
+						<button class='btn plus'>
+							<i class='fas fa-plus icon'></i>
+						</button>
+						<button class='btn minus'>
+							<i class='fas fa-minus icon'></i>
+						</button>
+					</div>
+					<div class='right'>
+						<button class='btn up'>
+							<i class='fas fa-angle-up icon'></i>
+						</button>
+						<button class='btn down'>
+							<i class='fas fa-angle-down icon'></i>
+						</button>
+					</div>
 				</div>
 			</div>
+
 		</div>
 
 
 		<div class='col right' id='list-items-display'>
 
-			<div class='list-item row'>
-				<div class='checkbox'></div>
-				<div class='info text'>This is a list</div>
-				<div class='tools-container row'>
-					<!-- <button class='trash'></button> -->
+			<div class='list-item row-center'>
+				<div class='left row-center'>
+					<button class='btn checkbox'>
+						<i class='fas fa-check'></i>
+					</button>
+					<div class='info text'>This is a list</div>
+				</div>
+				<div class='right row'>
+					<div class='tools-container row-center'>
+						<button class='btn trash'>
+							<i class='fas fa-trash-alt'></i>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class='list-item row-center'>
+				<div class='left row-center'>
+					<button class='btn checkbox'></button>
+					<div class='info text'>This is a list</div>
+				</div>
+				<div class='right row'>
+					<div class='tools-container row-center'>
+						<!-- <button class='btn trash'></button> -->
+					</div>
 				</div>
 			</div>
 

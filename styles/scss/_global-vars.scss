@@ -1,15 +1,20 @@
 // colors
 $lightgray: #DADFEA;
 $gray: #56585B;
-$mediumgray: #1A1B1F;
-$darkgray: #0B0C10;
+$darkgray: #0B0C0E;
+$darkgray2: #141517;
+$darkgray3: #1A1B1F;
 $black: #000000;
 $white: #FFFFFF;
 $pink: #FB77B7;
+$darkpink: #AB2767;
 $orange: #FF7B54;
-$shadow: rgba(0, 0, 0, 0.3);
+$darkorange: #AF1B00;
+$shadow-heavy: 0px 0px 24px rgba(0, 0, 0, 0.9);
+$shadow-light: 0px 0px 16px rgba(0, 0, 0, 0.5);
 
 // misc.
+$icon-size: 30px;
 $side-margin: 7vw;
 $media-breakpoint: 1000px;
 
@@ -30,9 +35,9 @@ $media-breakpoint: 1000px;
 // animations
 //
 @keyframes magnet {
-	from {}
+	from {box-shadow: none;}
 	to {
-		box-shadow: 3px 3px 3px $shadow;
+		box-shadow: $shadow-heavy;
 	}
 }
 @mixin magnetic-effect {
