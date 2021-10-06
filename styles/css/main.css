@@ -172,7 +172,7 @@ body {
   word-wrap: none;
   width: 60%;
 }
-#lists-display .active {
+#lists-display .list.active .title {
   color: #FB77B7;
 }
 #lists-display .list:nth-child(even) {
@@ -191,7 +191,7 @@ body {
   min-height: 100px;
 }
 
-#list-items-display {
+#list-items-container {
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -200,28 +200,30 @@ body {
   background-color: #1A1B1F;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
 }
-#list-items-display .list-item {
+#list-items-container .list-item {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #202125;
 }
-#list-items-display .list-item .btn.checkbox {
-  width: 30px;
-  height: 30px;
+#list-items-container .list-item .btn.checkbox {
+  min-width: 36px;
+  min-height: 36px;
   margin-left: 24px;
   margin-right: 24px;
-  border: 4px solid #000000;
+  border: 4px solid #AB2767;
   border-radius: 8px;
   background: transparent;
 }
-#list-items-display .list-item .btn.checkbox i {
-  font-size: 20px;
+#list-items-container .list-item .btn.checkbox .fa-check {
+  display: none;
+  font-size: 18px;
+  color: #FFFFFF;
 }
-#list-items-display .list-item .btn.checkbox .fa-check {
-  color: #FB77B7;
+#list-items-container .list-item .btn.checkbox .fa-check.done {
+  display: initial;
 }
-#list-items-display .list-item .tools-container .btn.trash {
+#list-items-container .list-item .tools-container .btn.trash {
   width: 28px;
   height: 28px;
   font-size: 28px;
@@ -229,6 +231,10 @@ body {
   margin-right: 24px;
   color: #FF7B54;
 }
-#list-items-display .list-item:nth-child(even) {
+#list-items-container .list-item:nth-child(even) {
   background-color: #1A1B1F;
+}
+#list-items-container .new-list-btn {
+  height: 50px;
+  width: 50px;
 }

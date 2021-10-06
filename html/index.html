@@ -9,7 +9,8 @@
 </head>
 
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type='text/javascript' src="../js/main.js"></script>
 
 	<div id='app-container'>
 
@@ -19,27 +20,15 @@
 
 		<div class='col left' id='lists-display'>
 
-			<div class='list'>
+			<div class='list active' onclick=''>
 				<p class='title text'>List 1</p>
-				<button class='btn edit'>
+				<button class='btn edit' onclick='List.active.editName();'>
 					<i class='fas fa-pen icon'></i>
 				</button>
 			</div>
-			<div class='list'>
+			<div class='list' onclick=''>
 				<p class='title text'>List 2</p>
-				<button class='btn edit'>
-					<i class='fas fa-pen icon'></i>
-				</button>
-			</div>
-			<div class='list active'>
-				<p class='title text active'>List 3</p>
-				<button class='btn edit'>
-					<i class='fas fa-pen icon'></i>
-				</button>
-			</div>
-			<div class='list'>
-				<p class='title text'>List 4</p>
-				<button class='btn edit'>
+				<button class='btn edit' onclick='List.active.editName();'>
 					<i class='fas fa-pen icon'></i>
 				</button>
 			</div>
@@ -50,18 +39,18 @@
 			<div class='toolbar-container'>
 				<div class='toolbar' id='toolbar-left'>
 					<div class='left'>
-						<button class='btn plus'>
+						<button class='btn plus' onclick='List.newList();'>
 							<i class='fas fa-plus icon'></i>
 						</button>
-						<button class='btn minus'>
+						<button class='btn minus' onclick='List.active.delete();'>
 							<i class='fas fa-minus icon'></i>
 						</button>
 					</div>
 					<div class='right'>
-						<button class='btn up'>
+						<button class='btn up' onclick='cycleUp();'>
 							<i class='fas fa-angle-up icon'></i>
 						</button>
-						<button class='btn down'>
+						<button class='btn down' onclick='cycleDown();'>
 							<i class='fas fa-angle-down icon'></i>
 						</button>
 					</div>
@@ -71,23 +60,33 @@
 		</div>
 
 
-		<div class='col right' id='list-items-display'>
+		<div class='col right' id='list-items-container'>
 
 
-			<div class='list-item row-center'>
-				<div class='left row-center'>
-					<button class='btn checkbox'>
-						<i class='fas fa-check'></i>
-					</button>
-					<div class='text'>This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text</div>
-				</div>
-				<div class='right row'>
-					<div class='tools-container row-center'>
-						<button class='btn trash'>
-							<i class='fas fa-times'></i>
+			<div id='list-items-display'>
+
+				<div class='list-item row-center' id='list-1'>
+					<div class='left row-center'>
+						<button class='btn checkbox' onclick='checkSelf("list-1");'>
+							<i class='fas fa-check done'></i>
 						</button>
+						<div class='text'>This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text</div>
+					</div>
+					<div class='right row-center'>
+						<div class='tools-container row-center'>
+							<button class='btn trash' onclick='deleteSelf("list-1");'>
+								<i class='fas fa-times'></i>
+							</button>
+						</div>
 					</div>
 				</div>
+
+			</div>
+
+			<div class='row-center new-list-btn'>
+				<button class='btn plus' onclick='List.active.addListItem("List item filler text");'>
+					<i class='fas fa-plus icon'></i>
+				</button>
 			</div>
 
 
