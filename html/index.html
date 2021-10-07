@@ -10,7 +10,6 @@
 
 <body>
 	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type='text/javascript' src="../js/main.js"></script>
 
 	<div id='app-container'>
 
@@ -74,6 +73,9 @@
 					</div>
 					<div class='right row-center'>
 						<div class='tools-container row-center'>
+							<button class='btn edit' onclick='checkSelf("list-1");'>
+								<i class='fas fa-pen icon'></i>
+							</button>
 							<button class='btn trash' onclick='deleteSelf("list-1");'>
 								<i class='fas fa-times'></i>
 							</button>
@@ -94,6 +96,9 @@
 
 
 	</div>
+
+	<script type='text/javascript' src="../js/main.js"></script>
+
 </body>
 
 </html>

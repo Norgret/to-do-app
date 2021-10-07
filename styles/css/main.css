@@ -237,4 +237,6 @@ body {
 #list-items-container .new-list-btn {
   height: 50px;
   width: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
