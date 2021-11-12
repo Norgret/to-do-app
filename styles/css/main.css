@@ -178,14 +178,8 @@ body {
 #lists-display .list:nth-child(even) {
   background-color: #141517;
 }
-#lists-display .list:nth-child(even) .btn.edit {
-  background-color: #000000;
-}
 #lists-display .list:nth-child(odd) {
   background-color: #000000;
-}
-#lists-display .list:nth-child(odd) .btn.edit {
-  background-color: #141517;
 }
 #lists-display .bottom-padding {
   min-height: 100px;
@@ -199,6 +193,9 @@ body {
   width: 67vw;
   background-color: #1A1B1F;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+}
+#list-items-container #list-items-display {
+  width: 100%;
 }
 #list-items-container .list-item {
   width: 100%;

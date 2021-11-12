@@ -83,15 +83,9 @@ $toolbar-height: 70px;
 	}
 	.list:nth-child(even) {
 		background-color: $darkgray2;
-		.btn.edit {
-			background-color: $black;
-		}
 	}
 	.list:nth-child(odd) {
 		background-color: $black;
-		.btn.edit {
-			background-color: $darkgray2;
-		}
 	}
 
 	.bottom-padding {
@@ -112,12 +106,13 @@ $toolbar-height: 70px;
 	background-color: $darkgray3;
 	box-shadow: $shadow-light;
 
+	#list-items-display {width: 100%;}
+
 
 	.list-item {
 		width: 100%;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		// border-bottom: 4px solid $darkgray;
 
 		background-color: $darkgray4;
 

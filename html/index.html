@@ -14,23 +14,20 @@
 	<div id='app-container'>
 
 
-		<!-- <nav id='navbar'></nav> -->
-
-
 		<div class='col left' id='lists-display'>
 
-			<div class='list active' onclick=''>
+			<!-- <div class='list active' id='list-0' onclick=''>
+				<p class='title text'>List 0</p>
+				<button class='btn edit' onclick='list.editName();'>
+					<i class='fas fa-pen icon'></i>
+				</button>
+			</div>
+			<div class='list' id='list-1' onclick=''>
 				<p class='title text'>List 1</p>
-				<button class='btn edit' onclick='List.active.editName();'>
+				<button class='btn edit' onclick='list.editName();'>
 					<i class='fas fa-pen icon'></i>
 				</button>
-			</div>
-			<div class='list' onclick=''>
-				<p class='title text'>List 2</p>
-				<button class='btn edit' onclick='List.active.editName();'>
-					<i class='fas fa-pen icon'></i>
-				</button>
-			</div>
+			</div> -->
 
 
 
@@ -64,19 +61,19 @@
 
 			<div id='list-items-display'>
 
-				<div class='list-item row-center' id='list-1'>
+				<div class='list-item row-center list-0'>
 					<div class='left row-center'>
-						<button class='btn checkbox' onclick='checkSelf("list-1");'>
+						<button class='btn checkbox' onclick='checkList(getListById("list-1"));'>
 							<i class='fas fa-check done'></i>
 						</button>
 						<div class='text'>This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text This is a list lorem ipsum filler text</div>
 					</div>
 					<div class='right row-center'>
 						<div class='tools-container row-center'>
-							<button class='btn edit' onclick='checkSelf("list-1");'>
+							<button class='btn edit' onclick='checkList(getListById("list-1"));'>
 								<i class='fas fa-pen icon'></i>
 							</button>
-							<button class='btn trash' onclick='deleteSelf("list-1");'>
+							<button class='btn trash' onclick='deleteList(getListById("list-1"));'>
 								<i class='fas fa-times'></i>
 							</button>
 						</div>
@@ -97,6 +94,7 @@
 
 	</div>
 
+	<script type='text/javascript' src="../js/list.js"></script>
 	<script type='text/javascript' src="../js/main.js"></script>
 
 </body>

@@ -1,60 +1,18 @@
 
-//
-// List class definition
-//
+/*
+ *	Page functionality
+ */
 
-// Child of List
-class ListItem {
-	constructor(id, content = "") {
-		this.id = id;
-		this.content = content;
-		this.isChecked = false;
-	}
-
-	delete() {
-
+function deleteElement(arr, el) {
+	for (let i in arr) {
+		if (arr[i] === el) {
+			arr.splice(i, 1);
+			return arr;
+		}
 	}
 }
-
-// List contains ListItems
-class List {
-	constructor(name = "New List", id = List.generateID()) {
-		this.name = name;			// name is mutable
-		this.id = id;				// ID must be unique
-		this.contents = [];			// stores ListItems
-		this.isActive = false;
-		this.currentChildID = 0;
-	}
-	addListItem(content) {
-		let listItem = new ListItem(this.generateChildID(), content);
-		this.contents.push(listItem);
-		renderListItem(listItem);
-	}
-	render() {						// Clears list item display and draws contents
-
-	}
-	activate() {
-		this.isActive = true;
-		List.active = this;
-	}
-	delete() {						// allows List instance to delete itself
-		deleteList(this);
-	}
-	generateChildID() {
-		return `${this.id}-${++this.currentChildID}`;
-	}
-
-	static currentID = 0;
-	static generateID() {
-		return `list-${List.currentID++}`;
-	}
-	static active;					// stores active List
-
-}
-
-
 //
-//	List functionality
+//	variable declarations
 //
 
 let listsDisplay = document.getElementById('lists-display');
@@ -62,61 +20,77 @@ let listContentsDisplay = document.getElementById('list-items-display');
 let lists = [];
 
 
-function getListItemHTML(listItem) {
-	let element = `
-		<div class='list-item row-center' id=${listItem.id}>
-			<div class='left row-center'>
-				<button class='btn checkbox' onclick='checkSelf(${listItem.id});'>
-					<i class='fas fa-check'></i>
-				</button>
-				<div class='text'>${listItem.content}</div>
-			</div>
-			<div class='right row-center'>
-				<div class='tools-container row-center'>
-					<button class='btn trash' onclick='deleteSelf(${listItem.id});'>
-						<i class='fas fa-times'></i>
-					</button>
-				</div>
-			</div>
-		</div>`;
-	return element;
+//
+//	render functions
+//
+
+// clear list displays
+function clearListItemDisplay() {
+	listContentsDisplay.innerHTML = "";
 }
+function clearListsDisplay() {
+	listsDisplay.innerHTML = "";
+}
+
+// render list contents
 function renderListItem(listItem) {				// appends a ListItem to display
 	listContentsDisplay.innerHTML += getListItemHTML(listItem);
 }
-
-
-function getListHTML(list = null) {
-
-}
-function renderListsMenu(listsArray = lists) {	// appends a List to display
-	for (let list of lists) {
-		console.log(list);
-	}
-}
-
-
 function renderList(list) {
 	listContentsDisplay.innerHTML = "";			// clears listContentsDisplay
-	for (let listItem in list.contents) {		// writes contents in display
+	for (let listItem of list.contents) {		// writes contents in display
 		renderListItem(listItem);
 	}
 }
 
+// render list menu
+function renderListTitle(list) {
+	listsDisplay.innerHTML += getListHTML(list);
+}
+function renderListsDisplay(listsArray = lists) {	// appends a List to display
+	clearListsDisplay();
+	for (let list of listsArray) {
+		renderListTitle(list);
+	}
+}
+
+// redraw all lists and active list contents
+function render() {
+	clearListItemDisplay();
+	clearListsDisplay();
+	renderList(List.active);
+	renderListsDisplay();
+}
+
+
+//
+//	misc. list functions
+//
+
+function checkList(list) {}
 function deleteList(list) {
-	document.getElementById(list.id).style = 'display: none';
-	listContentsDisplay.innerHTML = "";
+	if (list.isActive) clearListItemDisplay();	// clear list items display
+	deleteElement(lists, list);					// remove selected list from lists array
+	renderListsDisplay();
 }
 
-function clearChecked(list) {
+function clearChecked() {
 
 }
 
-let list1 = new List("list1");
-list1.activate();
+
+//
+//	test cases
+//
+
+lists.push(new List("list1"));
+lists.push(new List("list2"));
+lists[0].activate();
+renderListsDisplay();
 
 List.active.addListItem("text");
 List.active.addListItem("text");
 List.active.addListItem("text");
 
-List.active.render();
+setTimeout(() => {deleteList(List.active);}, 1000);
+
